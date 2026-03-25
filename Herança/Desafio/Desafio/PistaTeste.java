@@ -1,7 +1,5 @@
 package Desafio;
 
-
-
 public class PistaTeste {
 public static void main(String[] args) {
     Carro c = new Civic();
@@ -20,6 +18,14 @@ public static void main(String[] args) {
     ferrari.acelerar();
     ferrari.frear();
     ferrari.frear();
+    ferrari.ligarturbo();
+    ferrari.desligarTurbo();
+    ferrari.ligarAr();
+    ferrari.acelerar();
+    ferrari.ligarturbo();
+    ferrari.desligarAr();
+    ferrari.acelerar();
+    
 
     System.out.println(ferrari);
 

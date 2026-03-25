@@ -1,7 +1,7 @@
 package Desafio;
 
 public class Civic extends Carro {
-    Civic(){
+public Civic() {
         super(220);
     }
 
