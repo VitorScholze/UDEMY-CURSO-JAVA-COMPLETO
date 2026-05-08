@@ -10,10 +10,10 @@ public class FabricaConexao {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             String stringConexao =
-                    "jdbc:mysql://localhost:3306/curso_java";
+                    "jdbc:mysql://**************";
 
-            String usuario = "root";
-            String senha = "12345678";
+            String usuario = "*****";
+            String senha = "**********";
 
             return DriverManager.getConnection(
                     stringConexao,
