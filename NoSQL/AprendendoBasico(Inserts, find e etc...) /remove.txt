@@ -1,0 +1,6 @@
+db.estados.remove({sigla: "AC"}) --> estados com sigla AC sera excluido
+
+db.estados.remove({populacao : {$exists: true}}, 1) --> apenas um estado que tem atributo populacao sera excluido
+
+db.estados.remove({populacao:{ $lt: 20000000}}) --> sera removido o estados que possui populacao menor que 20000000
+
