@@ -1,0 +1,18 @@
+use wm -> utilizar um schema mesmo se ele nao estiver criado;
+
+db.createCollection('estados') -> cria uma colletion chamada "estados"
+db.createCollection('carros') -> cria uma collection chamada "carros"
+
+
+
+show collection -> mostra todas as collections;
+
+db.estados.drop() -> excluir collection;
+
+Se eu dropar a tabela estados e utilizar isso , db.estados.insert(....), mesmo
+nao existindo mais essa collection, ele cria automatico;
+
+db.estados.find() -> encontra objetos da collection;
+
+Os objetos podem ter atributos diferentes na mesma collection, por isso é
+uma documentacao, cada registro representa um documento no formato JSON;
