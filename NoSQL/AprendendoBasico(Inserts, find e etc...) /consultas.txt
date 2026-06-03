@@ -1,0 +1,97 @@
+db.estados.findOne({sigla: "RJ"})
+//Traga estado que possui a sigla "RJ"
+_id: ObjectId('6a1eefd5e630eb7a159569c7'),
+nome; 'Rio de Janeiro',
+ sigla; 'RJ',
+ regiao; 'Sudeste',
+ cidades; [ { nome: 'Niteroi', area: 133.9, populacao: 120000 } ]
+
+
+// ---------------------
+//Traga os estados que possui a silga "RJ" ou "AC";
+
+ db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+[
+  {
+    _id: ObjectId('6a1eec06e630eb7a159569c5'),
+    nome: 'Acre',
+    regiao: 'Norte',
+    sigla: 'AC'
+  },
+  {
+    _id: ObjectId('6a1eefd5e630eb7a159569c7'),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niteroi', area: 133.9, populacao: 120000 } ]
+  }
+]
+
+//----------------
+
+//Traga os estados que tem o atributo populacao
+
+db.estados.find({populacao : {$exists: true}})
+[
+  {
+    _id: ObjectId('6a1eee52e630eb7a159569c6'),
+    nome: 'Alagoas',
+    sigla: 'AL',
+    regiao: 'Nordeste',
+    populacao: 320000
+  }
+]
+
+//---------------------
+
+db.estados.find().skip(1).limit(2)
+[
+  {
+    _id: ObjectId('6a1eee52e630eb7a159569c6'),
+    nome: 'Alagoas',
+    sigla: 'AL',
+    regiao: 'Nordeste',
+    populacao: 320000
+  },
+  {
+    _id: ObjectId('6a1eefd5e630eb7a159569c7'),
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    regiao: 'Sudeste',
+    cidades: [ { nome: 'Niteroi', area: 133.9, populacao: 120000 } ]
+  }
+]
+
+//---------------------
+
+db.estados.count()
+5
+
+//---------------------
+//Traga o estado que possui a sigla "SP" mas apenas com nome e sigla(nesse 
+//caso o ID vem automatico)
+
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1})
+[
+  {
+    _id: ObjectId('6a1f4036e630eb7a159569c9'),
+    nome: 'Sao Paulo',
+    sigla: 'SP'
+  },
+  {
+    _id: ObjectId('6a1f419fe630eb7a159569cc'),
+    nome: 'Sao Paulo',
+    sigla: 'SP'
+  }
+]
+
+//--------------------
+//Traga os estados com sigla "SP", mas apenas o nome das cidades sem o ID;
+
+ db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0 })
+[
+  { cidades: [ { nome: 'Campinas' } ] },
+  { cidades: [ { nome: 'Guarulhos' }, { nome: 'Soroacba' } ] }
+]
+
+//--------------------
