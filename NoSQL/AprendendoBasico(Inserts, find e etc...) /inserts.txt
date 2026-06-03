@@ -1,0 +1,16 @@
+db.estados.insert({nome : "Sao Paulo", sigla : "SP", regiao: "Suldeste", cidades: 
+    [{ _id: ObjectId(), nome:"Guarulhos", populacao: 1325000},
+    {_id: ObjectId(), nome: "Soroacba", distanciaCapital: 87, populacao: 644919}]})
+
+
+ db.estados.insert({nome : "Sao Paulo", sigla : "SP", regiao: "Suldeste", cidades: 
+    [{ _id: ObjectId(), nome:"Campinas", area:  795.7, prefeito: "Jonas Donizette",
+     populacao: 108100}]})
+
+
+-----OUTRA TABELA------
+db.carros.insert({marca: "AUDI", modelo: "RS6", ano: 2026, cavalos: 760})
+db.carros.insert({marca:"BMW", modelo:"M4 COMPETITION", ano:2020, cavalos: 560,
+loja: [{nome: "WebMotors"}]}) 
+
+
